@@ -56,7 +56,7 @@ Dubbox adds features like RESTful remoting, Kyro/FST serialization, etc to the p
     * 提供辅助类便于REST的中文处理
     * 改变使用`@Reference` annotation配置时的异常处理方式，即当用annotation配置时，过去dubbo在启动期间不抛出依赖服务找不到的异常，而是在具体调用时抛出NPE，这与用XML配置时的行为不一致。
     * 较大的充实了Dubbo REST的文档
-* **dubbox-2.8.3**：
+* **dubbox-2.8.3-SNAPSHOT**：
     * 在REST中支持dubbo统一的方式用bean validation annotation作参数校验（沈理）
     * 在RpcContext上支持获取底层协议的Request/Response（沈理）
     * 支持采用Spring的Java Config方式配置dubbo（马金凯）
