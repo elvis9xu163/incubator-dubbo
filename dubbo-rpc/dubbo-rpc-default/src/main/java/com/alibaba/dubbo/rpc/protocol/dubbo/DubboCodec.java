@@ -29,7 +29,6 @@ import com.alibaba.dubbo.common.serialize.ObjectInput;
 import com.alibaba.dubbo.common.serialize.ObjectOutput;
 import com.alibaba.dubbo.common.serialize.OptimizedSerialization;
 import com.alibaba.dubbo.common.serialize.Serialization;
-import com.alibaba.dubbo.common.serialize.support.kryo.KryoSerialization;
 import com.alibaba.dubbo.common.utils.ReflectUtils;
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.remoting.Channel;
@@ -41,7 +40,6 @@ import com.alibaba.dubbo.remoting.transport.CodecSupport;
 import com.alibaba.dubbo.rpc.Invocation;
 import com.alibaba.dubbo.rpc.Result;
 import com.alibaba.dubbo.rpc.RpcInvocation;
-import com.esotericsoftware.kryo.KryoSerializable;
 
 import static com.alibaba.dubbo.rpc.protocol.dubbo.CallbackServiceCodec.encodeInvocationArgument;
 
@@ -64,6 +62,11 @@ public class DubboCodec extends ExchangeCodec implements Codec2 {
     public static final byte RESPONSE_VALUE = 1;
 
     public static final byte RESPONSE_NULL_VALUE = 2;
+
+    // 兼容apache dubbo 2.7.0
+    public static final byte RESPONSE_WITH_EXCEPTION_WITH_ATTACHMENTS = 3;
+    public static final byte RESPONSE_VALUE_WITH_ATTACHMENTS = 4;
+    public static final byte RESPONSE_NULL_VALUE_WITH_ATTACHMENTS = 5;
 
     public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
 
